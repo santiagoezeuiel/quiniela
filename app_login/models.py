@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
+from django.contrib.auth.models import Group, User
 
 
 
@@ -9,6 +10,15 @@ from django.contrib import messages
 
 
 # crear login 
+
+def crear_grupos():
+
+    jefe_group,_ = Group.objects.get_or_create(name='Jefes')
+    cajero_group,_ = Group.objects.get_or_create(name='Cajeros')
+    agencieros_group,_ = Group.objects.get_or_create(name='Agencieros')
+
+
+
 
 def user_login(request):
 

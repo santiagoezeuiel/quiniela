@@ -5,7 +5,14 @@ from .models import *
 # Create your views here.
 
 
-def agenciero(request):
+def home(request):
+    
+    return render(request, 'home/home.html',{
+        'title' : 'Home',
+    })
+
+
+def lista_agenciero(request):
 
     agenciero = Agenciero.objects.all()
 

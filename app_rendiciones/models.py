@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from app_agencia.models import Agencia
+from app_cajero.models import *
 
 # Create your models here.
 
@@ -20,4 +21,6 @@ class Rendicion(models.Model):
 
     class Meta:
         ordering = ('-id', '-created')
+
+
 

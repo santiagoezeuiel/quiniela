@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Agenciero
 from .models import *
 
@@ -14,10 +14,20 @@ def home(request):
 
 def lista_agenciero(request):
 
-    agenciero = Agenciero.objects.all()
+    agencieros = Quinielero.objects.all()
 
     return render(request, 'agenciero/lista.html', {
         'title' : 'Lista de agencieros',
-        'agenciero' : agenciero,
+        'agencieros' : agencieros,
     })
 
+
+def detalle_agenciero(request, id):
+
+    agencieros = get_object_or_404(Quinielero, pk=id)
+
+
+    return render(request, 'agenciero/agenciero.html', {
+        'title' : 'Agenciero',
+        'agencieros' : agencieros,
+    })

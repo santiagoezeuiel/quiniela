@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+        {% block title %}
+
+            {{ title }}
+
+        {% endblock %}
+
+
+{% block content %}
+
+
+
+<h1 class="text-center text-xl font-bold my-10">Agencias</h1>
+
+
+<div class="max-w-xl w-full mx-auto  bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+    <!-- Datos del la Agencia -->
+    <div class="mx-10  ">
+      <p class="text-lg text-gray-600"><strong>Nombre: </strong>{{ agencieros.user.last_name }} {{ agencieros.user.first_name }}</p>
+      <p class="text-lg text-gray-600"><strong>DNI: </strong> {{ agencieros.user.agenciero.dni }}</p>
+      <p class="text-lg text-gray-600"><strong>cbu: </strong> {{ agencieros.user.agenciero.cbu }}</p>
+      <p class="text-lg text-gray-600"><strong>Numero de agencia: </strong> {{ agencieros.n_agencia }}</p>
+      <p class="text-lg text-gray-600"><strong>Estado de la agencia: </strong> {{ agencieros.estado }}</p>
+      <p class="text-lg text-gray-600"><strong>Provincia: </strong> {{ agencieros.provincia }}</p>
+      <p class="text-lg text-gray-600"><strong>Departamento: </strong> {{ agencieros.departamento }}</p>
+      <p class="text-lg text-gray-600"><strong>Localidad: </strong> {{ agencieros.localidad }}</p>
+      <p class="text-lg text-gray-600"><strong>N°: </strong> {{ agencieros.n_casa }}</p>      
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+        {% block title %}
+
+            {{ title }}
+
+        {% endblock %}
+
+
+{% block content %}
+
+<div >
+    <h1 class="text-2xl text-center font-bold text-gray-800 mb-4">Lista de localidades</h1>
+    <table class="w-full border-collapse border border-gray-200 shadow-md rounded-lg bg-white">
+        <thead>
+            <tr class="bg-gray-100">
+                <th class="border border-gray-300 px-4 py-2 text-left text-gray-600 font-medium">ID</th>
+                <th class="border border-gray-300 px-4 py-2 text-left text-gray-600 font-medium">Provincia</th>
+                <th class="border border-gray-300 px-4 py-2 text-left text-gray-600 font-medium">Fecha de alta</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for provincia in provincias %}
+                <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-300 px-4 py-2 text-gray-700">{{ provincia.id }}</td>
+                    <td class="border border-gray-300 px-4 py-2 text-gray-700">{{ provincia.nombre }}</td>
+                    <td class="border border-gray-300 px-4 py-2 text-gray-700">{{ provincia.created }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+<div >
+    <h1 class="text-2xl text-center font-bold text-gray-800 mb-4">Lista los Departamentos</h1>
+    <table class="w-full border-collapse border border-gray-200 shadow-md rounded-lg bg-white">
+        <thead>
+            <tr class="bg-gray-100">
+                <th class="border border-gray-300 px-4 py-2 text-left text-gray-600 font-medium">ID</th>
+                <th class="border border-gray-300 px-4 py-2 text-left text-gray-600 font-medium">Departamentos</th>
+                <th class="border border-gray-300 px-4 py-2 text-left text-gray-600 font-medium">Fecha de alta</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for departamento in departamentos %}
+                <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-300 px-4 py-2 text-gray-700">{{ departamento.id }}</td>
+                    <td class="border border-gray-300 px-4 py-2 text-gray-700">{{ departamento.nombre }}</td>
+                    <td class="border border-gray-300 px-4 py-2 text-gray-700">{{ departamento.created }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+<div >
+    <h1 class="text-2xl text-center font-bold text-gray-800 mb-4">Lista las Localidades</h1>
+    <table class="w-full border-collapse border border-gray-200 shadow-md rounded-lg bg-white">
+        <thead>
+            <tr class="bg-gray-100">
+                <th class="border border-gray-300 px-4 py-2 text-left text-gray-600 font-medium">ID</th>
+                <th class="border border-gray-300 px-4 py-2 text-left text-gray-600 font-medium">Localidad</th>
+                <th class="border border-gray-300 px-4 py-2 text-left text-gray-600 font-medium">Fecha de alta</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for localidad in localidades %}
+                <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-300 px-4 py-2 text-gray-700">{{ localidad.id }}</td>
+                    <td class="border border-gray-300 px-4 py-2 text-gray-700">{{ localidad.nombre }}</td>
+                    <td class="border border-gray-300 px-4 py-2 text-gray-700">{{ localidad.created }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

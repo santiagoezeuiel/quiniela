@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+        {% block title %}
+
+            {{ title }}
+
+        {% endblock %}
+
+
+{% block content %}
+
+<h1>Formulario</h1>
+
+<div>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+            <label for="{{form.agencia.id_for_label}}" class="font-medium text-lg text-black">
+                <h1 class="my-4">{{form.agencia.label}}</h1>
+            </label>
+            {{ form.agencia }}
+            {% if form.agencia.errors %}
+            <div>
+                {{ form.agencia.errors }}
+            </div>
+            {% endif %}
+        </div>
+        <div>
+            <label for="{{form.agencia.id_for_label}} " class="font-medium text-lg text-black">
+                <h1 class="my-4">{{form.imagen.label}}</h1>
+            </label>
+            {{ form.imagen }}
+            {% if form.imagen.errors %}
+            <div>
+                {{ form.imagen.errors }}
+            </div>
+            {% endif %}
+        </div>
+        <div>
+            <label for="{{form.agencia.id_for_label}}" class="font-medium text-lg text-black">
+                <h1 class="my-4">{{form.monto.label}}</h1>
+            </label>
+            {{ form.monto }}
+            {% if form.monto.errors %}
+            <div>
+                {{ form.monto.errors }}
+            </div>
+            {% endif %}
+        </div>
+        <div>
+            <label for="{{form.agencia.id_for_label}}" class="font-medium text-lg text-black">
+                <h1 class="my-4">{{form.n_comprobante.label}}</h1>
+            </label>
+            {{ form.n_comprobante }}
+            {% if form.n_comprobante.errors %}
+            <div>
+                {{ form.n_comprobante.errors }}
+            </div>
+            {% endif %}
+        </div>
+        <button type="submit" class="h-10 w-32 bg-blue-300 border-solid border-2 border-gray-400 rounded-2xl my-8 sm:mx-10 md:mx-48
+        text-xl text-black shadow-xl shadow-shadowenviar hover:bg-blue-700">Enviar</button>
+    </form>
+</div>
+
+{% endblock %}

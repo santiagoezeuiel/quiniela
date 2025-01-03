@@ -1,15 +1,51 @@
-<header class="bg-gray-800 text-white p-4">
+{% load static tailwind_tags %}
+
+  
+  <header class="bg-slate-600 text-white p-4 w-full">
     <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold">logo</h1>
-      <nav>
-        <ul class="flex space-x-4">
+      <!-- Logo -->
+      <img src="{% static 'imagenes/logos/logo1.png' %}" alt="Logo" class="h-10">
+  
+      <!-- Botón del menú hamburguesa -->
+      <button id="menu-button" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+  
+      <!-- Menú de navegación -->
+      <nav id="menu" class="hidden md:block absolute md:static top-16 left-0 w-full bg-slate-600 md:bg-transparent md:w-auto">
+        <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 p-4 md:p-0">
           <li><a href="/" class="hover:text-gray-400">Inicio</a></li>
-          <li><a href="{% url 'lista_agenciero' %}" class="hover:text-gray-400">
-            Agencieros
-          </a></li>
-          <li><a href="/contact" class="hover:text-gray-400">Contacto</a></li>
+          <li><a href="{% url 'lista_agenciero' %}" class="hover:text-gray-400">Agencieros</a></li>
+          <li><a href="{% url 'lista_agencia' %}" class="hover:text-gray-400">Agencias</a></li>
+          <li>
+            <div class="relative group">
+              <button class="text-white rounded-md inline-flex items-center">
+                Rendición
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="absolute hidden group-hover:block mt-1 w-48 bg-white rounded-lg shadow-lg">
+                <a href="{% url 'lista_rendicion' %}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Rendiciones</a>
+                <a href="{% url 'crear_rendicion' %}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Crear Rendición</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Opción 3</a>
+              </div>
+            </div>
+          </li>
+          <li><a href="{% url 'lista_cajero' %}" class="hover:text-gray-400">Cajeros</a></li>
+          <li><a href="{% url 'lista_provincia' %}" class="hover:text-gray-400">Localidad</a></li>
         </ul>
       </nav>
     </div>
   </header>
+
+  <script>
+    const menuButton = document.getElementById('menu-button');
+    const menu = document.getElementById('menu');
   
+    menuButton.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+        {% block title %}
+
+            {{ title }}
+
+        {% endblock %}
+
+
+{% block content %}
+
+
+<h1 class="text-center text-xl font-bold my-10">Agenciero</h1>
+
+
+<div class="max-w-xl w-full mx-auto  bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+  <!-- Contenedor Principal -->
+  <div class="flex items-start p-6">
+    <!-- Imagen -->
+    <img class="w-32 h-32  object-cover rounded-lg mr-6" src="{{ agencieros.user.agenciero.foto.url }}" alt="Foto">
+
+    <!-- Datos del Agenciero -->
+    <div class="mx-10  ">
+      <h2 class="text-2xl font-bold text-gray-800">Nombre:</h2>
+      <p class="text-lg text-gray-600">{{ agencieros.user.last_name }} {{ agencieros.user.first_name }}</p>
+      <p class="text-lg text-gray-600"><strong>DNI:</strong> {{ agencieros.user.agenciero.dni }}</p>
+      <p class="text-lg text-gray-600"><strong>cbu:</strong> {{ agencieros.user.agenciero.cbu }}</p>
+    </div>
+  </div>
+
+  <!-- Más Información -->
+  <div class="border-t border-gray-700 p-6">
+    <p class="text-lg text-gray-600"><strong>Provincia:</strong> {{ agencieros.user.agenciero.provincia }}</p>
+    <p class="text-lg text-gray-600"><strong>Departamento:</strong> {{ agencieros.user.agenciero.departamento }}</p>
+    <p class="text-lg text-gray-600"><strong>localidad:</strong> {{ agencieros.user.agenciero.localidad }}</p>
+  </div>
+</div>
+
+
+
+{% endblock%} 
